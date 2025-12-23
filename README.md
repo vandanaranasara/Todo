@@ -5,7 +5,6 @@
 [![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
@@ -82,75 +81,51 @@ Fast API/
 
 ---
 
-## 🚀 Quick Start
+# 🚀 How to Run the Project
 
-### 1️⃣ Setup (once)
+Follow these steps to set up and run the project on your local system:
 
-From the project root (`Fast API`):
+### 1️⃣ Clone the Repository
+- Clone the project from GitHub using:
+ ```bash
+git clone https://github.com/vandanaranasara/Todo.git
+cd Todo
+```
 
+### 2️⃣ Create a Virtual Environment
 ```bash
-cd "Fast API"
-
 python -m venv venv
-
-# Windows
+```
+- Activate the Virtual Environment
+```bash
 venv\Scripts\activate
+```
 
-# macOS / Linux
-source venv/bin/activate
-
+### 3️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
 ```
 
-Create a `.env` file in the project root:
-
-```env
-DB_URL=sqlite:///./todo.db
-SECRET_KEY=your-secret-key-here-change-in-production
-```
-
-> 💡 **Tip:** Use a long, random `SECRET_KEY` value in real deployments.
-
-### 2️⃣ Run the backend (Terminal 1)
-
+### 4️⃣ Run the Development Server
 ```bash
-uvicorn app.main:app --reload
-```
-
-- API base URL: `http://localhost:8000`
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
-
-### 3️⃣ Run the frontend (Terminal 2)
-
-```bash
+uvicorn uvicorn app.main:app --reload  
 streamlit run frontend.py
 ```
-
-- Frontend URL: `http://localhost:8501`
-
-> ✅ **Make sure** the FastAPI backend is running **before** starting Streamlit.
-
 ---
 
 ## 🧩 API Endpoints
 
 ### 🔐 Authentication
-- `POST /auth/login` – user login  
-  - Body: `username`, `password` (form data)  
-  - Returns: `access_token`
+- `POST /auth/login` – User login  
 
 ### 👤 Users
-- `POST /users/` – register a new user  
-  - Body: `username`, `email`, `password` (JSON)  
-  - Returns: created user info
+- `POST /users/` – Register a new user  
 
 ### 📝 Todos  (requires Bearer token)
-- `GET /todos/` – list todos for the authenticated user
-- `POST /todos/` – create a new todo  
-  - Body: `title` (JSON)
-- `PUT /todos/{todo_id}` – toggle completion status
-- `DELETE /todos/{todo_id}` – delete a todo
+- `GET /todos/` – List todos for the authenticated user
+- `POST /todos/` – Create a new todo  
+- `PUT /todos/{todo_id}` – Toggle completion status
+- `DELETE /todos/{todo_id}` – Delete a todo
 
 ---
 
@@ -170,23 +145,11 @@ streamlit run frontend.py
 
 ## ⚙️ Configuration
 
-### Backend API URL
-
-If the backend is not at `http://localhost:8000`, you can:
-
-- Set an environment variable:
+### Set an environment variable:
 
 ```bash
-export API_BASE_URL=http://your-host:your-port
+DB_URL=YOUR_DB_URL
 ```
-
-or on Windows PowerShell:
-
-```powershell
-$env:API_BASE_URL="http://your-host:your-port"
-```
-
-- Or update `API_BASE_URL` directly in `frontend.py`.
 
 ---
 
