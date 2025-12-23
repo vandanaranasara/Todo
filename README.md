@@ -196,8 +196,8 @@ alembic revision --autogenerate -m "describe your change"
 |-----------|------------|
 | ![Login](screenshot/login.png) | ![Register](screenshot/register.png) |
 
-| Todo | Query |
-|-----------|------------|
+| Todo |
+|-----------|
 | ![Todo](screenshot/todo.png) |
 
 ## 👥 Contributor
