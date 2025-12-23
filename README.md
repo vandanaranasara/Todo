@@ -194,13 +194,12 @@ alembic revision --autogenerate -m "describe your change"
 
 | Login | Register |
 |-----------|------------|
-| ![Login](screenshots/login.png) | ![Register](screenshots/register.png) |
+| ![Login](screenshot/login.png) | ![Register](screenshot/register.png) |
 
 | Todo | Query |
 |-----------|------------|
-| ![Todo](screenshots/todo.png) |
+| ![Todo](screenshot/todo.png) |
 
 ## 👥 Contributor
 
 - [Vandana Ranasara](https://github.com/vandanaranasara)
-
